@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Flask Demo{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+        <h1 class="text-center">PyPi Search</h1>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <form action="{{ url_for('search_from_form.search') }}"
+                          method="post"
+                          role="form">
+                        {{ form.csrf_token }}
+                        <div class="input-group text-center">
+                            <input type="text" class="form-control" name="search_value" placeholder="Enter Package Name">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="submit">Go!</button>
+                                 </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
