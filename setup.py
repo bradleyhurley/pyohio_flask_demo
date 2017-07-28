@@ -42,7 +42,6 @@ setup(
                       'gunicorn==19.6.0',
                       'pytest==3.0.3',
                       'mock==2.0.0',
-                      'psycopg2==2.6.2',
                       'pytest==3.0.3',
                       'requests==2.10.0',
                       'python-magic==0.4.13',

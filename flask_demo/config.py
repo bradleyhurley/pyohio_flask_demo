@@ -10,7 +10,6 @@ class Config:
 
     @classmethod
     def init_app(cls, app):
-        app.config['BASE_PATH'] = os.environ['BASE_PATH']
         app.config['CACHE_TYPE'] = 'filesystem'
         app.config['CACHE_DIR'] = '/tmp/demo'
 
@@ -39,9 +38,7 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
-    REBUILD_ID_UPDATE_INTERVAL = 60  # 1 minute
-    REBUILD_STATUS_UPDATE_INTERVAL = 180  # 3 minutes
-    SQLITE_PURGE_INTERVAL = 43200  # 12 hours
+
 
 config = {
     'development': DevelopmentConfig,
